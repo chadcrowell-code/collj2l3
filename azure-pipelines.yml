@@ -1,8 +1,3 @@
-# Maven
-# Build your Java projects and run tests with Apache Maven.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/java
-
 stages:
 - stage: Build 
   jobs:
@@ -51,7 +46,7 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Azure Web App Deploy: LinuxWildflyApp'
             inputs:
-              azureSubscription: 'RMPM (afc11291-9826-46be-b852-70349146ddf8)'
+              azureSubscription: 'SP'
               appType: webAppLinux
-              appName: LinuxWildflyApp
+              appName: 'WildFlyLinux'
               package: '$(build.artifactstagingdirectory)/**/*.war'
