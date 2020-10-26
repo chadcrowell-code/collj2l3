@@ -43,10 +43,9 @@ stages:
             displayName: 'Download Build Artifacts'
             inputs:
               artifactName: drop
-          - task: AzureWebApp@1
-            displayName: 'Azure Web App Deploy: LinuxWildflyApp'
+          
+          - task: AzureWebAppContainer@1
             inputs:
               azureSubscription: 'SP'
-              appType: webAppLinux
-              appName: 'WildFlyLinux'
-              package: '$(build.artifactstagingdirectory)/**/*.war'
+              appName: 'webapprcfltuzv26yxc'
+              containers: 'chadmcrowell/wildfly'
